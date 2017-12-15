@@ -1,5 +1,6 @@
 body, html{
     background: #f7f7f7;
+    margin: 0;
 }
 
 h1{
@@ -7,9 +8,10 @@ h1{
 }
 
 .mainHead{
-    background: #406183;
+    background: #51498B;
     width: 100%;
     height: 100px;
+    margin: 0;
 }
 
 .mainHeadTitle{
@@ -17,4 +19,21 @@ h1{
     margin-left: 20px;
     padding-top: 24px;
     font-size: 2.8em;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.headerLinks{
+    color: white;
+    display: inline-block;
+    float: right;
+    margin-top: 60px;
+    margin-right: 20px;
+}
+
+.headerLinks > li{
+    display: inline-block;
+    margin-right: 20px;
+    font-size: 1.6em;
+    font-weight: bold;
 }
