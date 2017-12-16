@@ -16,6 +16,13 @@ function createHeader(){
         const hdLinkItem = document.createElement('li');
         hdLinkItem.innerHTML = linkNames[i];
         hdLinks.appendChild(hdLinkItem);
+        hdLinks.style.cursor="pointer";
+        if(linkNames[i].toLowerCase() == 'home'){
+            hdLinkItem.addEventListener('click', () => window.open('index.html', "_self"));
+        }
+        else{
+            hdLinkItem.addEventListener('click', () => window.open(linkNames[i].toLocaleLowerCase() + '.html', "_self"));
+        }
     }
     hd.appendChild(hdLinks);
 }
