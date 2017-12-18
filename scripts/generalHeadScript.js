@@ -1,4 +1,6 @@
-console.log('lol');
+window.onload = function(){
+    console.log('lol');
+
 
 function createHeader(){
     const linkNames = ['Home', 'Legends', 'Stories', 'Reviews',  'About', ];
@@ -30,3 +32,5 @@ function createHeader(){
 (function initHead(){
     createHeader();
 })()
+
+}
