@@ -1,7 +1,7 @@
 console.log('lol');
 
 function createHeader(){
-    const linkNames = ['Home', 'About', 'Contact'];
+    const linkNames = ['Home', 'Legends', 'Stories', 'Reviews',  'About', ];
     const hd = document.createElement('div');
     hd.classList += 'mainHead';
     site.appendChild(hd);
