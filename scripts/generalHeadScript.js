@@ -27,7 +27,6 @@ function createHeader(){
         const hdLinkItem = document.createElement('li');
         hdLinkItem.innerHTML = linkNames[i];
         hdLinks.appendChild(hdLinkItem);
-        hdLinks.style.cursor="pointer";
         if(linkNames[i].toLowerCase() == 'home'){
             hdLinkItem.addEventListener('click', () => window.open('index.html', "_self"));
         }
@@ -35,7 +34,16 @@ function createHeader(){
             hdLinkItem.addEventListener('click', () => window.open(linkNames[i].toLocaleLowerCase() + '.html', "_self"));
         }
     }
-    hd.appendChild(hdLinks);
+    
+    if($(window).width() > 800){
+        hd.appendChild(hdLinks);
+    }
+    else{
+        const secondHd = document.createElement('div');
+        secondHd.classList += 'secondHd';
+        fullHead.appendChild(secondHd);
+        secondHd.appendChild(hdLinks);
+    }
 }
 
 window.addEventListener('resize', function(){console.log($(window).width())});
