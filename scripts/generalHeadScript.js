@@ -1,6 +1,7 @@
 window.onload = function(){
     
 const linkNames = ['Home', 'Legends', 'Stories', 'Reviews',  'About', ];
+let navToggle = false;
 
 
 //Make the header html
@@ -66,7 +67,7 @@ function createHeader(){
 window.addEventListener('resize', function(){console.log($(window).width())});
 
 function navExpand(){
-    if(1 == 1){
+    if(!navToggle){
         for(var i = 0; i < linkNames.length; i++){
             let itemMain = false;
             console.log(document.getElementsByClassName('linkItem')[i].classList.length);
@@ -77,11 +78,16 @@ function navExpand(){
                 }
             }
             if(itemMain == false){
-                document.getElementsByClassName('linkItem')[i].classList += 'dropDownItem ';
+                document.getElementsByClassName('linkItem')[i].classList += ' dropDownItem ';
             }
         }
     }
-    
+    else{
+        for(var i = 0; i < linkNames.length; i++){
+            document.getElementsByClassName('linkItem')[i].classList.remove('dropDownItem');
+        }
+    }
+    navToggle = !navToggle;
 }
  
 
