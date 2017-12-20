@@ -66,19 +66,22 @@ function createHeader(){
 window.addEventListener('resize', function(){console.log($(window).width())});
 
 function navExpand(){
-    for(var i = 0; i < linkNames.length; i++){
-        let itemMain = false;
-        console.log(document.getElementsByClassName('linkItem')[i].classList.length);
-        for(var j = 0; j < document.getElementsByClassName('linkItem')[i].classList.length; j++){
-            console.log(document.getElementsByClassName('linkItem')[i].classList[j])
-            if(document.getElementsByClassName('linkItem')[i].classList[j] == 'linkItemShow'){
-                itemMain = true;
+    if(1 == 1){
+        for(var i = 0; i < linkNames.length; i++){
+            let itemMain = false;
+            console.log(document.getElementsByClassName('linkItem')[i].classList.length);
+            for(var j = 0; j < document.getElementsByClassName('linkItem')[i].classList.length; j++){
+                console.log(document.getElementsByClassName('linkItem')[i].classList[j])
+                if(document.getElementsByClassName('linkItem')[i].classList[j] == 'linkItemShow'){
+                    itemMain = true;
+                }
+            }
+            if(itemMain == false){
+                document.getElementsByClassName('linkItem')[i].classList += 'dropDownItem ';
             }
         }
-        if(itemMain == false){
-            document.getElementsByClassName('linkItem')[i].classList += 'dropDownItem ';
-        }
     }
+    
 }
  
 
