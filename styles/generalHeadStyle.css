@@ -24,7 +24,7 @@ h1{
     display: inline-block;
 }
 
-.headerLinks > li{
+.linkItem{
     display: inline-block;
     margin-right: 20px;
     font-size: 1.3em;
@@ -38,9 +38,9 @@ h1{
     background: #707070;
 }
 
-@media only screen and (min-width: 320px) and (max-width: 479px){ ... }
+/*@media only screen and (min-width: 320px) and (max-width: 479px){ ... }*/
 
-@media only screen and (min-width: 480px) and (max-width: 767px){ ... }
+
 
 @media only screen and (max-width: 800px) { 
 
@@ -84,7 +84,16 @@ h1{
     .mainHeadTitle{
         display: inline-block;
     }
-
-    
   }
+
+  @media only screen and (max-width: 470px){ 
+
+    .linkItem{
+        display: none;
+    }
+
+    .headerLinksHide{
+        display: inline-block;
+    }
+ }
 

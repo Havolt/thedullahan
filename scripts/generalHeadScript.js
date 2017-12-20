@@ -25,6 +25,7 @@ function createHeader(){
     hdLinks.classList += 'headerLinks'
     for(let i = 0; i < linkNames.length; i++){
         const hdLinkItem = document.createElement('li');
+        hdLinkItem.classList += 'linkItem ';
         hdLinkItem.innerHTML = linkNames[i];
         hdLinks.appendChild(hdLinkItem);
         if(linkNames[i].toLowerCase() == 'home'){
