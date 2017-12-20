@@ -86,7 +86,7 @@ h1{
     }
   }
 
-  @media only screen and (max-width: 470px){ 
+  @media only screen and (max-width: 480px){ 
 
     .linkItem{
         display: none;
@@ -122,6 +122,12 @@ h1{
         height: 30px;
         border-radius: 2px;
         font-size: 1.35em;
+    }
+
+    .navButton:hover{
+        cursor: pointer;
+        background: #c7dbf9;
+        color: black;
     }
  }
 

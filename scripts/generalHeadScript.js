@@ -1,5 +1,6 @@
 window.onload = function(){
-    console.log('lol');
+    
+const linkNames = ['Home', 'Legends', 'Stories', 'Reviews',  'About', ];
 
 
 //Make the header html
@@ -9,7 +10,7 @@ function createHeader(){
     site.appendChild(fullHead);
     fullHead.id = 'fullHead';
     //Array with links for the the list
-    const linkNames = ['Home', 'Legends', 'Stories', 'Reviews',  'About', ];
+    
     //Main div of header
     const hd = document.createElement('div');
     hd.classList += 'mainHead';
@@ -50,16 +51,35 @@ function createHeader(){
         fullHead.appendChild(secondHd);
         secondHd.appendChild(hdLinks);
 
-        const hdMenu = document.createElement('button');
-        hdMenu.innerHTML = '&#9776;'
-        hdMenu.classList = 'navButton'
-        secondHd.appendChild(hdMenu);
+        if($(window).width() < 481){
+            const hdMenu = document.createElement('button');
+            hdMenu.innerHTML = '&#9776;'
+            hdMenu.classList = 'navButton'
+            secondHd.appendChild(hdMenu);
+            hdMenu.addEventListener('click', navExpand)
+        }
     }
+
+    
 }
 
 window.addEventListener('resize', function(){console.log($(window).width())});
 
-
+function navExpand(){
+    for(var i = 0; i < linkNames.length; i++){
+        let itemMain = false;
+        console.log(document.getElementsByClassName('linkItem')[i].classList.length);
+        for(var j = 0; j < document.getElementsByClassName('linkItem')[i].classList.length; j++){
+            console.log(document.getElementsByClassName('linkItem')[i].classList[j])
+            if(document.getElementsByClassName('linkItem')[i].classList[j] == 'linkItemShow'){
+                itemMain = true;
+            }
+        }
+        if(itemMain == false){
+            document.getElementsByClassName('linkItem')[i].classList += 'dropDownItem ';
+        }
+    }
+}
  
 
 (function initHead(){
