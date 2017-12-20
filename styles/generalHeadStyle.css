@@ -90,10 +90,21 @@ h1{
 
     .linkItem{
         display: none;
+        font-size: 1.7em;
     }
 
-    .headerLinksHide{
-        display: inline-block;
+    .headerLinks{
+        margin: 0 0 0 30px;
+    }
+
+    .secondHd{
+        text-align: left;
+    }
+
+    .linkItemShow{
+        display: block;
+        float: left;
+        
     }
  }
 

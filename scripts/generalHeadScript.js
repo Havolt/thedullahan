@@ -34,6 +34,9 @@ function createHeader(){
         else{
             hdLinkItem.addEventListener('click', () => window.open(linkNames[i].toLocaleLowerCase() + '.html', "_self"));
         }
+        if(currSection == linkNames[i].toLowerCase()){
+            hdLinkItem.classList += 'linkItemShow'
+        }
     }
     
     if($(window).width() > 800){
@@ -48,6 +51,7 @@ function createHeader(){
 }
 
 window.addEventListener('resize', function(){console.log($(window).width())});
+
 
  
 
