@@ -38,6 +38,8 @@ function createHeader(){
             hdLinkItem.classList += 'linkItemShow'
         }
     }
+
+    
     
     if($(window).width() > 800){
         hd.appendChild(hdLinks);
@@ -47,6 +49,11 @@ function createHeader(){
         secondHd.classList += 'secondHd';
         fullHead.appendChild(secondHd);
         secondHd.appendChild(hdLinks);
+
+        const hdMenu = document.createElement('button');
+        hdMenu.innerHTML = '&#9776;'
+        hdMenu.classList = 'navButton'
+        secondHd.appendChild(hdMenu);
     }
 }
 
