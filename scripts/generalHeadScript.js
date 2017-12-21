@@ -26,13 +26,18 @@ function createHeader(){
     const hdLinks = document.createElement('ul');
     hdLinks.classList += 'headerLinks'
 
-    for(var i = 0; i < linkNames.length; i++){
-        if(linkNames[i].toLocaleLowerCase() == currSection){
+    for(let i = 0; i < linkNames.length; i++){
+        if(linkNames[i].toLocaleLowerCase() == currSection && $(window).width() < 481){
             const hdLinkItem = document.createElement('li');
             hdLinkItem.classList += 'linkItem ';
             hdLinkItem.innerHTML = linkNames[i];
             hdLinks.appendChild(hdLinkItem);
-            hdLinkItem.addEventListener('click', () => window.open(linkNames[i].toLocaleLowerCase() + '.html', "_self"));
+            if(linkNames[i].toLowerCase() == 'home'){
+                hdLinkItem.addEventListener('click', () => window.open('index.html', "_self"));
+            }
+            else{
+                hdLinkItem.addEventListener('click', () => window.open(linkNames[i].toLocaleLowerCase() + '.html', "_self"));
+            }
             hdLinkItem.classList += 'linkItemShow'
         }
     }
@@ -40,7 +45,7 @@ function createHeader(){
     
     for(let i = 0; i < linkNames.length; i++){
 
-        if(linkNames[i].toLocaleLowerCase() !== currSection){
+        if(linkNames[i].toLocaleLowerCase() !== currSection || ( $(window).width() >= 481)){
             const hdLinkItem = document.createElement('li');
             hdLinkItem.classList += 'linkItem ';
             hdLinkItem.innerHTML = linkNames[i];
