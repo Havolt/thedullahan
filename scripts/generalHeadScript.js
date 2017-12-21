@@ -25,24 +25,42 @@ function createHeader(){
     //Creates the links in the header by looping through linkNames array
     const hdLinks = document.createElement('ul');
     hdLinks.classList += 'headerLinks'
-    for(let i = 0; i < linkNames.length; i++){
-        const hdLinkItem = document.createElement('li');
-        hdLinkItem.classList += 'linkItem ';
-        hdLinkItem.innerHTML = linkNames[i];
-        hdLinks.appendChild(hdLinkItem);
-        if(linkNames[i].toLowerCase() == 'home'){
-            hdLinkItem.addEventListener('click', () => window.open('index.html', "_self"));
-        }
-        else{
+
+    for(var i = 0; i < linkNames.length; i++){
+        if(linkNames[i].toLocaleLowerCase() == currSection){
+            const hdLinkItem = document.createElement('li');
+            hdLinkItem.classList += 'linkItem ';
+            hdLinkItem.innerHTML = linkNames[i];
+            hdLinks.appendChild(hdLinkItem);
             hdLinkItem.addEventListener('click', () => window.open(linkNames[i].toLocaleLowerCase() + '.html', "_self"));
-        }
-        if(currSection == linkNames[i].toLowerCase()){
             hdLinkItem.classList += 'linkItemShow'
         }
     }
 
     
+    for(let i = 0; i < linkNames.length; i++){
+
+        if(linkNames[i].toLocaleLowerCase() !== currSection){
+            const hdLinkItem = document.createElement('li');
+            hdLinkItem.classList += 'linkItem ';
+            hdLinkItem.innerHTML = linkNames[i];
+            hdLinks.appendChild(hdLinkItem);
+            if(linkNames[i].toLowerCase() == 'home'){
+                hdLinkItem.addEventListener('click', () => window.open('index.html', "_self"));
+            }
+            else{
+                hdLinkItem.addEventListener('click', () => window.open(linkNames[i].toLocaleLowerCase() + '.html', "_self"));
+            }
+            if(currSection == linkNames[i].toLowerCase()){
+                hdLinkItem.classList += 'linkItemShow'
+            }
+        }
+
+
+    }
+
     
+    //Media query javascript
     if($(window).width() > 800){
         hd.appendChild(hdLinks);
     }
@@ -66,14 +84,17 @@ function createHeader(){
 
 window.addEventListener('resize', function(){console.log($(window).width())});
 
+
+//Function for navbutton
 function navExpand(){
     if(!navToggle){
         for(var i = 0; i < linkNames.length; i++){
             let itemMain = false;
-            console.log(document.getElementsByClassName('linkItem')[i].classList.length);
+            
             for(var j = 0; j < document.getElementsByClassName('linkItem')[i].classList.length; j++){
-                console.log(document.getElementsByClassName('linkItem')[i].classList[j])
+                
                 if(document.getElementsByClassName('linkItem')[i].classList[j] == 'linkItemShow'){
+                    console.log(document.getElementsByClassName('linkItem')[i])
                     itemMain = true;
                 }
             }
