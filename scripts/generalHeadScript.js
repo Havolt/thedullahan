@@ -8,7 +8,7 @@ let navToggle = false;
 function createHeader(){
     //The wrapping div for header
     const fullHead = document.createElement('div');
-    site.appendChild(fullHead);
+    siteHead.appendChild(fullHead);
     fullHead.id = 'fullHead';
     //Array with links for the the list
     
